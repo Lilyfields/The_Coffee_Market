@@ -1,0 +1,40 @@
+{
+  "name": "The_Coffee_Market",
+  "version": "2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
+    "start": "webpack-dev-server",
+    "server": "cd server node server.js --ignore client",
+    "build": "webpack",
+    "install": "cd client && npm install",
+    "client": "cd client && npm start",
+    "deploy": "npm run build && npm run git -commit && npm run git-push"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.1.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "if-env": "^1.0.4",
+    "nodemon": "^2.0.16",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "webpack-manifest-plugin": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-flow": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.5",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^8.15.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-dev-server": "^4.9.0"
+  }
+}
